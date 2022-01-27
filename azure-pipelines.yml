@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -20,3 +21,8 @@ steps:
     npm run build
     npm run test
   displayName: 'npm install and build'
+
+- task: Docker@2
+  inputs:
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
