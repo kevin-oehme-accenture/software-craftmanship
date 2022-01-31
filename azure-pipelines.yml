@@ -16,6 +16,13 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+- task: Docker@2
+  displayName: Build an image
+  inputs:
+    repository: $(imageName)
+    command: build
+    Dockerfile: app/Dockerfile
+
 - script: |
     npm install
     npm run build
