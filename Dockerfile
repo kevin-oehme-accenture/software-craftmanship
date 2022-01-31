@@ -1,5 +1,8 @@
 FROM node:16
 
+ENV BUILD_LIBRDKAFKA=0
+ARG BUILD_LIBRDKAFKA=0
+
 # Create app directory
 WORKDIR /usr/src/app
 
