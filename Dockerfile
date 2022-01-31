@@ -29,6 +29,7 @@ LABEL maintainer "kevin.oehme@accenture.com"
 
 #ENV NODE_PATH='/node_modules'
 ENV BUILD_LIBRDKAFKA=0
+ENV DOCKER_BUILDKIT=1
 
 # Create app directory
 WORKDIR /usr/src/app
