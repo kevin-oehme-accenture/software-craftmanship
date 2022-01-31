@@ -28,8 +28,8 @@ steps:
     npm run build
     npm run test
   displayName: 'npm install and build'
-
-- task: Docker@2
-  inputs:
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+#
+#- task: Docker@2
+#  inputs:
+#    command: 'buildAndPush'
+#    Dockerfile: '**/Dockerfile'
