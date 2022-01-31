@@ -1,7 +1,7 @@
 FROM node:16
 
-ENV NODE_PATH='/node_modules'
-#ENV BUILD_LIBRDKAFKA=0
+#ENV NODE_PATH='/node_modules'
+ENV BUILD_LIBRDKAFKA=0
 
 # Create app directory
 WORKDIR /usr/src/app
