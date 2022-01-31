@@ -39,7 +39,7 @@ WORKDIR /usr/src/app
 # RUN docker cp dummy:/root/* /usr/src/app/node_modules  
 # RUN docker rm dummy
 
-VOLUME /node-rdkafka
+VOLUME /node-rdkafka2
 ADD node-rdkafka ./node_modules
 
 # Install app dependencies
