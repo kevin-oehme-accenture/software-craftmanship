@@ -38,9 +38,8 @@ WORKDIR /usr/src/app
 # RUN docker container create --name dummy -v node-rdkafka:/root node-rdkafka
 # RUN docker cp dummy:/root/* /usr/src/app/node_modules  
 # RUN docker rm dummy
-
-VOLUME /node-rdkafka2
-ADD node-rdkafka ./node_modules
+RUN --mount=target=/node_modules,type=bind,source=node-rdkafka,type=cache
+#ADD node-rdkafka ./node_modules
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
