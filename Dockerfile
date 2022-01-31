@@ -1,5 +1,6 @@
 FROM node:16
 
+LABEL maintainer "kevin.oehme@accenture.com"
 
 # # Update aptitude with new repo
 # RUN apt-get update
@@ -34,10 +35,12 @@ WORKDIR /usr/src/app
 
 #COPY --from=${YOUR_REGISTRY}/node-rdkafka-builds:node-10 /node_modules /usr/src/app/node_modules
 
-RUN docker container create --name dummy -v node-rdkafka:/root node-rdkafka
-RUN docker cp dummy:/root/* /usr/src/app/node_modules  
-RUN docker rm dummy
+# RUN docker container create --name dummy -v node-rdkafka:/root node-rdkafka
+# RUN docker cp dummy:/root/* /usr/src/app/node_modules  
+# RUN docker rm dummy
 
+VOLUME ["/node-rdkafka"]
+COPY node-rdkafka /usr/src/app/node_modules
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
