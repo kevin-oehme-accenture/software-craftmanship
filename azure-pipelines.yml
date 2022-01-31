@@ -14,7 +14,7 @@ steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
-  displayName: 'Install Node.js'
+  displayName: 'install node'
   condition: 
 
 - script: |
@@ -24,7 +24,7 @@ steps:
   displayName: 'npm install, build and test'
 
 - task: Docker@2
-  displayName: build an image
+  displayName: build image
   inputs:
     repository: $(imageName)
     command: build
