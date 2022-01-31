@@ -39,8 +39,8 @@ WORKDIR /usr/src/app
 # RUN docker cp dummy:/root/* /usr/src/app/node_modules  
 # RUN docker rm dummy
 
-VOLUME ["/node-rdkafka"]
-COPY node-rdkafka/ ./node_modules
+VOLUME node-rdkafka
+COPY node-rdkafka ./node_modules
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
