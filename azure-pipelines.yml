@@ -15,19 +15,22 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
-
-- task: Docker@2
-  displayName: Build an image
-  inputs:
-    repository: $(imageName)
-    command: build
-    Dockerfile: Dockerfile
+  condition: 
 
 - script: |
     npm install
     npm run build
     npm run test
-  displayName: 'npm install and build'
+  displayName: 'npm install, build and test'
+
+- task: Docker@2
+  displayName: build an image
+  inputs:
+    repository: $(imageName)
+    command: build
+    Dockerfile: '**/Dockerfile'
+
+
 #
 #- task: Docker@2
 #  inputs:
